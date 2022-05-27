@@ -17,6 +17,9 @@ const MainContent = () => {
       .then((response) => response.json())
       .then((data) => {
         setProducts(data);
+      })
+      .catch((error) => {
+        alert(`Erro ao recuperar os produtos: ${error}`);
       });
   }, []);
 

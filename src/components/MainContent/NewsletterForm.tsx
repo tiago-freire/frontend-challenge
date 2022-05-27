@@ -23,7 +23,18 @@ const BaseNewsletterForm = ({ className }: { className?: string }) => {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-    });
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        alert(data?.message);
+        if (inputName.current && inputEmail.current) {
+          inputName.current.value = "";
+          inputEmail.current.value = "";
+        }
+      })
+      .catch((error) => {
+        alert(`Erro na inscrição da newsletter: ${error}`);
+      });
   };
 
   return (
