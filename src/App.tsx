@@ -1,25 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/Header";
+import MainContent from "./components/MainContent";
+import Footer from "./components/Footer";
+import styled from "styled-components";
+
+const Container = styled.div`
+  --gray: #7a7a7a;
+  --light-gray: #f2f2f2;
+  max-width: 1248px;
+  margin: 0 auto;
+  font-size: 18px;
+
+  * {
+    font-family: "Nunito", sans-serif;
+    &:focus-visible {
+      outline: var(--gray) solid 2px;
+    }
+  }
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Header />
+      <MainContent />
+      <Footer />
+    </Container>
   );
 }
 
