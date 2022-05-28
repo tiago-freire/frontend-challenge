@@ -15,4 +15,15 @@ declare global {
       }
     ];
   };
+
+  type Cart = {
+    items: Product[];
+    totalItems: number;
+    total: number;
+  };
+
+  type CartContextType = {
+    cart: Cart;
+    setCart: React.Dispatch<React.SetStateAction<Cart>>;
+  };
 }

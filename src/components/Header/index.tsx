@@ -1,16 +1,19 @@
 import styled from "styled-components";
+import { useContext } from "react";
 
 import logo from "../../assets/logo.svg";
-import glass from "../../assets/glass.svg";
-import user from "../../assets/user.svg";
-import cart from "../../assets/cart.svg";
+import glassIcon from "../../assets/glass.svg";
+import userIcon from "../../assets/user.svg";
+import cartIcon from "../../assets/cart.svg";
+
+import { CartContext } from "../../contexts/CartContext";
 
 const SearchInput = styled.input`
   width: 60%;
   height: 1.5rem;
   padding: 0.5rem;
   border: none;
-  border-bottom: var(--gray) solid 1px;
+  border-bottom: var(--dark-gray) solid 1px;
 
   &:focus-visible {
     border-bottom-color: transparent;
@@ -28,19 +31,21 @@ const HeaderButton = styled.button`
 `;
 
 const BaseHeader = (props: { className?: string }) => {
+  const { cart } = useContext(CartContext);
+
   return (
     <header className={props.className}>
       <img src={logo} alt="Logo da Corebiz" />
       <SearchInput type="text" placeholder="O que está procurando?" />
       <HeaderButton>
-        <img src={glass} alt="Buscar" />
+        <img src={glassIcon} alt="Buscar" />
       </HeaderButton>
       <HeaderButton>
-        <img src={user} alt="Ícone de Usuário" />
+        <img src={userIcon} alt="Ícone de Usuário" />
         Minha Conta
       </HeaderButton>
       <HeaderButton>
-        <img src={cart} alt="Ícone de Carrinho" />
+        <img src={cartIcon} alt="Ícone de Carrinho" /> - {cart.totalItems}
       </HeaderButton>
     </header>
   );

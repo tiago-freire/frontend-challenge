@@ -1,30 +1,36 @@
+import styled from "styled-components";
+
 import Header from "./components/Header";
 import MainContent from "./components/MainContent";
 import Footer from "./components/Footer";
-import styled from "styled-components";
+
+import { CartContextProvider } from "./contexts/CartContext";
 
 const Container = styled.div`
-  --gray: #7a7a7a;
   --light-gray: #f2f2f2;
+  --gray: #e6e8ea;
+  --dark-gray: #7a7a7a;
+  --light-black: #333333;
   max-width: 1248px;
   margin: 0 auto;
-  font-size: 18px;
 
   * {
     font-family: "Nunito", sans-serif;
     &:focus-visible {
-      outline: var(--gray) solid 2px;
+      outline: var(--dark-gray) solid 2px;
     }
   }
 `;
 
 function App() {
   return (
-    <Container>
-      <Header />
-      <MainContent />
-      <Footer />
-    </Container>
+    <CartContextProvider>
+      <Container>
+        <Header />
+        <MainContent />
+        <Footer />
+      </Container>
+    </CartContextProvider>
   );
 }
 
