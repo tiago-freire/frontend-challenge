@@ -27,6 +27,10 @@ export const NewsletterForm = styled.form`
   justify-content: center;
   gap: 0.5rem;
 
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+
   label {
     display: flex;
     flex-direction: column;

@@ -11,6 +11,17 @@ const ProductList = (props: { products: Product[] }) => {
         firstSlideMessage: "Primeira página",
         lastSlideMessage: "Última página",
       }}
+      breakpoints={{
+        320: {
+          slidesPerView: 1,
+        },
+        480: {
+          slidesPerView: 2,
+        },
+        768: {
+          slidesPerView: 4,
+        },
+      }}
       navigation
       modules={[Navigation, A11y]}
       slidesPerView={4}
