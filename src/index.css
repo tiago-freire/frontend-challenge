@@ -1,16 +1,41 @@
-/* based on https://www.digitalocean.com/community/tutorials/css-minimal-css-reset */
+/* Paleta de cores disponível para toda a árvore DOM usando variáveis do css */
+:root {
+  --light-gray: #f2f2f2;
+  --gray: #e6e8ea;
+  --medium-gray: #c0c0c0;
+  --dark-gray: #7a7a7a;
+  --light-black: #333333;
+  --red: #f8475f;
+  --danger: #d7182a;
 
+  /* Variáveis do Swiper */
+  --swiper-navigation-size: 30px;
+  --swiper-theme-color: var(--dark-gray);
+  --swiper-pagination-color: var(--red);
+  --swiper-pagination-bullet-inactive-color: var(--gray);
+  --swiper-pagination-bullet-inactive-opacity: 1;
+}
+
+/* Reset e font-size base */
 html {
   box-sizing: border-box;
   font-size: 18px;
 }
 
+/* Reset e font-family base */
 *,
 *:before,
 *:after {
   box-sizing: inherit;
+  font-family: "Nunito", sans-serif;
 }
 
+/* Outline padronizado (acessibilidade) */
+*:focus-visible {
+  outline: var(--dark-gray) solid 2px;
+}
+
+/* Reset */
 body,
 h1,
 h2,
@@ -26,11 +51,13 @@ ul {
   font-weight: normal;
 }
 
+/* Reset */
 ol,
 ul {
   list-style: none;
 }
 
+/* Reset */
 img {
   max-width: 100%;
   height: auto;

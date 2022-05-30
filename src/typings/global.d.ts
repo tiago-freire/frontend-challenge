@@ -18,8 +18,6 @@ declare global {
 
   type Cart = {
     items: Product[];
-    totalItems: number;
-    total: number;
   };
 
   type CartContextType = {
